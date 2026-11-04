@@ -30,8 +30,8 @@ async function startMenu(){
 
     try { 
       allItems = await loadMenu()
-    //   buildFilters()
-    //   showMenu()
+      buildFilters()
+      showMenu('All')
 statusMessage.textContent = ""
     }
     catch(error){
@@ -60,7 +60,7 @@ function makeCard(item) {
     let tagsHTML = ''
 
     if(item.popular) {
-        badge = `span class="badge"> Popular</span>`
+        badge = `<span class="badge"> Popular</span>`
     }
     if (item.soldOut) {
         cardClass = 'card-is-sold'
@@ -76,7 +76,7 @@ function makeCard(item) {
     <img src = "${item.image}" alt="${item.name}">
     <div class = "card-body">
     <h3>${item.name} ${badge}</h3>
-    <ul class = "tags">$ ${tagsHTML}</ul>
+    <ul class = "tags"> ${tagsHTML}</ul>
     <p class = "price">$${item.price.toFixed(2)}</p>
     ${soldText}
     </div>
@@ -86,10 +86,44 @@ function makeCard(item) {
 // 3. function showMenu(items)
 //    One heading per category, then a card for each item:
 //    photo, name, description, price, popular badge, tags, sold out.
+function showMenu(chosen) {
+ let menuHTML = ''
+
+ getCategories().forEach(function(category) {
+ if(chosen === 'All' || chosen === category) {
+    let cardsHTML = ''
+    allItems.forEach(function(item) {
+ if (item.category === category) {
+    cardsHTML += makeCard(item)
+ }
+    })
+    menuHTML +=`<h2>${category}</h2><div class = "grid"> ${cardsHTML}</div>`
+ }
+ })
+ menuContainer.innerHTML = menuHTML
+}
 
 // 4. function buildFilters(items)
 //    One "All" button, plus one button per category in the data.
 //    A click shows only that category's items.
+function buildFilters () {
+    let buttonsHTML = `<button class = "active"> All </button>`
+    getCategories().forEach(function (category){
+        buttonsHTML += `<button>${category}</button>`
+    })
+    filterContainer.innerHTML = buttonsHTML
 
+    const buttons = filterContainer.querySelectorAll('button')
+
+    buttons.forEach(function(button){
+        button.addEventListener('click', function () {
+            buttons.forEach(function (otherButton) {
+                otherButton.classList.remove('active')
+            })
+            button.classList.add('active')
+            showMenu(button.textContent)
+        })
+    })
+}
 // 5. Call startMenu() when the page opens
 startMenu()
