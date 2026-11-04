@@ -47,5 +47,5 @@ statusMessage.textContent = ""
 //    One "All" button, plus one button per category in the data.
 //    A click shows only that category's items.
 
-// 5. Call startMenu() when the page opens.
+// 5. Call startMenu() when the page opens
 startMenu()
