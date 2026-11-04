@@ -39,6 +39,50 @@ statusMessage.textContent = ""
         console.log(error)
     }
 }
+
+
+
+function getCategories() {
+    let categories = []
+
+    allItems.forEach(function(item) {
+        if(!categories.includes(item.category)){
+categories.push(item.category)
+        }
+    })
+    return categories
+}
+
+function makeCard(item) {
+    let cardClass = 'card'
+    let badge = ''
+    let soldText = ''
+    let tagsHTML = ''
+
+    if(item.popular) {
+        badge = `span class="badge"> Popular</span>`
+    }
+    if (item.soldOut) {
+        cardClass = 'card-is-sold'
+        soldText = `<p class="sold"> Sold out</p>`
+    }
+
+    item.tags.forEach(function(tag){
+        tagsHTML += `<li>${tag}</li>`
+    })
+
+    return `
+    <article class = "${cardClass}">
+    <img src = "${item.image}" alt="${item.name}">
+    <div class = "card-body">
+    <h3>${item.name} ${badge}</h3>
+    <ul class = "tags">$ ${tagsHTML}</ul>
+    <p class = "price">$${item.price.toFixed(2)}</p>
+    ${soldText}
+    </div>
+    </article>`
+
+}
 // 3. function showMenu(items)
 //    One heading per category, then a card for each item:
 //    photo, name, description, price, popular badge, tags, sold out.
