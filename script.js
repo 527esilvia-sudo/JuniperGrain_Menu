@@ -67,7 +67,7 @@ function makeCard (item) {
   let soldText = ''
   let tagsHTML = ''
 
-  if (item.poplar) {
+  if (item.popular) {
     badge = `<span class="badge">Popular</span>`
   }
   if (item.soldOut) {

@@ -1,27 +1,104 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Menu | Juniper & Grain</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Juniper & Grain | Holiday Menu</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
+
 <body>
-  <header>
-    <img src="img/logo.png" alt="Juniper & Grain logo" class="logo">
-    <h1>Our Menu</h1>
-  </header>
 
-  <main>
-    <!-- Your script builds one button per category in here. -->
-    <nav id="filters"></nav>
+    <header class="site-header">
+        <a href="#" class="brand">
+            <span class="brand-symbol">j<span>✳</span></span>
+            <span class="brand-name">
+                <strong>juniper <i>&</i> grain</strong>
+                <small>FRESH FROM OUR LITTLE KITCHEN</small>
+            </span>
+        </a>
 
-    <!-- Loading and error messages go here. -->
-    <p id="status"></p>
+        <nav class="main-nav">
+            <a href="#menu-section">MENU</a>
+            <a href="#seasonal">SEASONAL</a>
+            <a href="#footer">ABOUT</a>
+        </nav>
 
-    <!-- Your script builds the category headings and item cards in here. -->
-    <section id="menu"></section>
-  </main>
+        <a href="#menu-section" class="header-link">FIND YOUR FAVORITE ↗</a>
+    </header>
+
+    <main>
+
+        <section id="menu-section" class="menu-section">
+
+            <div class="menu-heading" id="seasonal">
+                <div>
+                    <span class="eyebrow">✳ &nbsp; THE HOLIDAY COLLECTION · 2026</span>
+                    <h1>Something <em>delicious</em> is in season.</h1>
+                    <p>
+                        Cozy favorites, seasonal treats, and little things
+                        made with care. Find your new favorite.
+                    </p>
+                </div>
+
+                <div class="menu-side-label">
+                    <span>FRESH</span>
+                    <span>SEASONAL</span>
+                    <span>DELICIOUS</span>
+                </div>
+            </div>
+
+            <div class="menu-decoration" aria-hidden="true">
+                <span></span>
+            </div>
+
+            <!-- JavaScript generates the filter buttons -->
+            <nav id="filters" class="filter-container"
+                aria-label="Filter menu by category">
+            </nav>
+
+            <!-- JavaScript controls the loading and error message -->
+            <p id="status" class="status-message"
+                role="status" aria-live="polite">
+            </p>
+
+            <!-- JavaScript generates the menu items -->
+            <div id="menu" class="menu-container"></div>
+
+            <div class="menu-bottom-note">
+                <span class="note-flower">✿</span>
+                <p>Made with care, shared with joy.</p>
+                <span class="note-flower">✿</span>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer id="footer" class="site-footer">
+
+        <div class="footer-brand">
+            <span class="footer-symbol">j✳</span>
+            <span>
+                <strong>juniper & grain</strong>
+                <small>GOOD THINGS GROW HERE</small>
+            </span>
+        </div>
+
+        <p>Wishing you a season full of good food and good company.</p>
+
+        <span class="footer-year">HOLIDAY EDITION · 2026</span>
+
+    </footer>
+
 </body>
 </html>

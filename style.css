@@ -1,9 +1,786 @@
-/* Juniper & Grain brand colors, from the client brief */
+
+/* =====================================
+   JUNIPER & GRAIN
+   HOLIDAY MENU
+===================================== */
+
 :root {
-  --sage: #3f5a46;
-  --terracotta: #c8693f;
-  --cream: #f7f2e9;
-  --espresso: #2b211c;
+    --sage: #687c5c;
+    --deep-green: #263e30;
+    --forest: #38533d;
+    --light-sage: #dce3d1;
+    --butter: #ead9a5;
+    --cream: #eee7d6;
+    --paper: #f0eadb;
+    --card-paper: #e8e0ce;
+    --cranberry: #923e40;
+    --ink: #343b30;
+    --muted: #777466;
+
+    --display: "Fraunces", Georgia, serif;
+    --body: "DM Sans", Arial, sans-serif;
+    --hand: "Kalam", cursive;
 }
 
-/* Your styles go below. */
+/* RESET */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--body);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+::selection {
+    background: var(--butter);
+    color: var(--deep-green);
+}
+
+/* =====================================
+   HEADER
+===================================== */
+
+.site-header {
+    min-height: 78px;
+    padding: 12px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    background: var(--deep-green);
+    color: var(--cream);
+    border-bottom: 3px solid var(--sage);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.brand-symbol {
+    width: 43px;
+    height: 43px;
+    display: grid;
+    place-items: center;
+    position: relative;
+    background: var(--sage);
+    color: var(--butter);
+    border-radius: 50%;
+    font-family: var(--display);
+    font-size: 29px;
+}
+
+.brand-symbol span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: var(--butter);
+    font-size: 12px;
+}
+
+.brand-name {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.brand-name strong {
+    font-family: var(--display);
+    font-size: 21px;
+    letter-spacing: -0.7px;
+}
+
+.brand-name i {
+    color: var(--butter);
+}
+
+.brand-name small {
+    color: #d5ddca;
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.main-nav a,
+.header-link {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.main-nav a {
+    position: relative;
+    padding: 10px 0;
+    color: #e8e8d9;
+    transition: color 0.2s ease;
+}
+
+.main-nav a:hover {
+    color: var(--butter);
+}
+
+.main-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+    height: 2px;
+    width: 0;
+    background: var(--butter);
+    transition: width 0.25s ease;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+.header-link {
+    color: var(--butter);
+    border-bottom: 1px solid var(--butter);
+    padding-bottom: 5px;
+}
+
+.header-link:hover {
+    color: white;
+}
+
+/* =====================================
+   MENU SECTION
+===================================== */
+
+.menu-section {
+    padding: 42px 8% 35px;
+    background:
+        radial-gradient(circle at 5% 10%, rgba(104,124,92,0.09), transparent 25%),
+        var(--cream);
+}
+
+.menu-heading {
+    max-width: 1350px;
+    margin: 0 auto 25px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.eyebrow {
+    color: var(--cranberry);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.menu-heading h1 {
+    margin: 9px 0 8px;
+    font-family: var(--display);
+    font-size: clamp(34px, 4vw, 49px);
+    font-weight: 600;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+}
+
+.menu-heading h1 em {
+    color: var(--sage);
+    font-weight: 500;
+}
+
+.menu-heading p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.menu-side-label {
+    display: flex;
+    gap: 7px;
+    padding-bottom: 5px;
+}
+
+.menu-side-label span {
+    padding: 8px 11px;
+    border: 1px solid #b9c3ae;
+    border-radius: 20px;
+    color: var(--sage);
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.menu-side-label span:nth-child(2) {
+    background: var(--butter);
+    border-color: var(--butter);
+    color: var(--deep-green);
+}
+
+/* =====================================
+   SMALL GARLAND DIVIDER
+===================================== */
+
+.menu-decoration {
+    max-width: 1350px;
+    margin: 0 auto 20px;
+    height: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-decoration span {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 3px;
+    height: 10px;
+    border-top: 2px solid var(--sage);
+    border-radius: 50%;
+}
+
+.menu-decoration::before,
+.menu-decoration::after {
+    content: "●  ●  ●  ●  ●  ●  ●  ●  ●  ●  ●  ●  ●  ●";
+    position: absolute;
+    top: -4px;
+    left: 0;
+    width: 100%;
+    color: var(--cranberry);
+    font-size: 8px;
+    letter-spacing: 34px;
+    white-space: nowrap;
+}
+
+/* =====================================
+   FILTER BUTTONS
+===================================== */
+
+.filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin: 18px 0 24px;
+}
+
+.filter-container button {
+    padding: 10px 17px;
+    background: #e3e1d0;
+    color: var(--deep-green);
+    border: 1px solid #c5cbb9;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: var(--body);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.22s ease;
+}
+
+.filter-container button:hover {
+    background: var(--butter);
+    border-color: var(--butter);
+    transform: translateY(-2px);
+}
+
+.filter-container button.active {
+    background: var(--deep-green);
+    border-color: var(--deep-green);
+    color: var(--cream);
+}
+
+/* =====================================
+   LOADING / ERROR
+===================================== */
+
+.status-message {
+    min-height: 20px;
+    margin: 8px 0 15px;
+    color: var(--sage);
+    font-family: var(--hand);
+    font-size: 15px;
+}
+
+.status-message:not(:empty)::before {
+    content: "✳";
+    display: inline-block;
+    margin-right: 9px;
+    color: var(--cranberry);
+    animation: slowTurn 3s linear infinite;
+}
+
+/* =====================================
+   CATEGORY HEADINGS
+===================================== */
+
+.menu-container h2 {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin: 29px 0 16px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid #cbd2c0;
+    color: var(--deep-green);
+    font-family: var(--display);
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.menu-container h2::after {
+    content: "✳";
+    color: var(--cranberry);
+    font-family: var(--body);
+    font-size: 14px;
+}
+
+/* =====================================
+   MENU CARD GRID
+===================================== */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 21px;
+}
+
+.card {
+    min-width: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: var(--card-paper);
+    border: 1px solid #d5cbb7;
+    border-radius: 18px;
+    box-shadow: 0 4px 12px rgba(52, 62, 44, 0.07);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    animation: cardEnter 0.4s ease both;
+}
+
+/* REAL GARLAND */
+
+.card::before {
+    content: "";
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 25px;
+    background:
+        radial-gradient(ellipse at 50% 0%, transparent 0 47%, var(--forest) 49% 53%, transparent 55%) 0 0 / 42px 19px repeat-x,
+        radial-gradient(ellipse at 50% 0%, transparent 0 47%, var(--sage) 49% 53%, transparent 55%) 21px 5px / 42px 18px repeat-x;
+    pointer-events: none;
+}
+
+/* Garland needles and berries */
+
+.card::after {
+    content: "";
+    position: absolute;
+    z-index: 5;
+    top: 3px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background:
+        radial-gradient(ellipse 9px 3px at 12px 8px, var(--sage) 95%, transparent),
+        radial-gradient(ellipse 9px 3px at 24px 14px, var(--forest) 95%, transparent),
+        radial-gradient(ellipse 9px 3px at 36px 7px, var(--sage) 95%, transparent),
+        radial-gradient(circle at 19px 5px, var(--cranberry) 0 3px, transparent 3.5px),
+        radial-gradient(circle at 40px 13px, var(--cranberry) 0 2.5px, transparent 3px);
+    background-size: 62px 20px;
+    background-repeat: repeat-x;
+    pointer-events: none;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(41, 63, 50, 0.13);
+}
+
+.card img {
+    display: block;
+    width: calc(100% - 14px);
+    height: 205px;
+    margin: 27px 7px 0;
+    object-fit: cover;
+    border-radius: 13px;
+    transition: transform 0.45s ease;
+}
+
+.card:hover img {
+    transform: scale(1.025);
+}
+
+.card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 15px 17px 18px;
+    border-top: 3px solid var(--sage);
+    margin-top: 11px;
+}
+
+.card h3 {
+    margin-bottom: 8px;
+    color: var(--deep-green);
+    font-family: var(--display);
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.75;
+}
+
+.card .price {
+    margin-top: auto;
+    padding-top: 14px;
+    color: var(--cranberry);
+    font-size: 15px;
+    font-weight: 800;
+}
+
+/* =====================================
+   POPULAR BADGE
+===================================== */
+
+.badge {
+    position: absolute;
+    z-index: 6;
+    top: 38px;
+    left: 15px;
+    padding: 7px 11px;
+    background: var(--butter);
+    color: var(--deep-green);
+    border: 1px solid #d8c58e;
+    border-radius: 20px;
+    font-family: var(--hand);
+    font-size: 12px;
+    font-weight: 700;
+    transform: rotate(-3deg);
+}
+
+/* =====================================
+   TAGS
+===================================== */
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+}
+
+.tags span {
+    padding: 5px 9px;
+    background: var(--light-sage);
+    color: var(--deep-green);
+    border-radius: 20px;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+}
+
+/* =====================================
+   SOLD OUT
+===================================== */
+
+.card.is-sold {
+    opacity: 0.7;
+}
+
+.card.is-sold img {
+    filter: grayscale(65%);
+}
+
+.sold {
+    display: inline-block;
+    width: fit-content;
+    margin-top: 12px;
+    padding: 7px 12px;
+    background: var(--cranberry);
+    color: white;
+    border-radius: 20px;
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* =====================================
+   BOTTOM NOTE
+===================================== */
+
+.menu-bottom-note {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+    color: var(--sage);
+    text-align: center;
+}
+
+.menu-bottom-note p {
+    font-family: var(--hand);
+    font-size: 16px;
+}
+
+.note-flower {
+    color: var(--cranberry);
+    font-size: 20px;
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.site-footer {
+    padding: 25px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    background: var(--deep-green);
+    color: var(--cream);
+    border-top: 3px solid var(--sage);
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-symbol {
+    color: var(--butter);
+    font-family: var(--display);
+    font-size: 32px;
+}
+
+.footer-brand > span:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.footer-brand strong {
+    font-family: var(--display);
+    font-size: 18px;
+}
+
+.footer-brand small {
+    color: #d6dfce;
+    font-size: 7px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.site-footer > p {
+    color: var(--butter);
+    font-family: var(--hand);
+    font-size: 14px;
+}
+
+.footer-year {
+    color: #d6dfce;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* =====================================
+   ANIMATIONS
+===================================== */
+
+@keyframes cardEnter {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slowTurn {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 950px) {
+
+    .site-header {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .main-nav {
+        gap: 17px;
+    }
+
+    .menu-section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 650px) {
+
+    .site-header {
+        padding: 12px 5%;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .brand-symbol {
+        width: 38px;
+        height: 38px;
+        font-size: 25px;
+    }
+
+    .brand-name strong {
+        font-size: 18px;
+    }
+
+    .main-nav {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        border-top: 1px solid rgba(238, 232, 215, 0.2);
+        padding-top: 10px;
+    }
+
+    .main-nav a {
+        font-size: 8px;
+    }
+
+    .header-link {
+        font-size: 8px;
+    }
+
+    .menu-section {
+        padding: 32px 5% 35px;
+    }
+
+    .menu-heading {
+        align-items: flex-start;
+        margin-bottom: 19px;
+    }
+
+    .menu-heading h1 {
+        font-size: 36px;
+    }
+
+    .menu-side-label {
+        display: none;
+    }
+
+    .menu-decoration {
+        margin-bottom: 15px;
+    }
+
+    .filter-container {
+        gap: 7px;
+        margin: 15px 0 20px;
+    }
+
+    .filter-container button {
+        padding: 9px 12px;
+        font-size: 8px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+
+    .card img {
+        height: 230px;
+    }
+
+    .menu-container h2 {
+        font-size: 25px;
+        margin-top: 24px;
+    }
+
+    .menu-bottom-note p {
+        font-size: 14px;
+    }
+
+    .site-footer {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 13px;
+        padding: 25px 7%;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .menu-heading h1 {
+        font-size: 31px;
+    }
+}
+
+/* =====================================
+   REDUCED MOTION
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
