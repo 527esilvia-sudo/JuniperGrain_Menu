@@ -485,8 +485,8 @@ button {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 60px 54px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 64px 56px;
 }
 
 .card {
@@ -522,9 +522,9 @@ button {
 
 .card img {
     display: block;
-    width: calc(100% - 72px);
-    height: 155px;
-    margin: 35px 36px 0;
+    width: calc(100% - 92px);
+    height: 225px;
+    margin: 38px 46px 0;
     object-fit: cover;
     background: var(--sage);
     border: 3px solid rgba(23, 61, 50, 0.45);
@@ -546,8 +546,8 @@ button {
     position: relative;
     isolation: isolate;
     overflow: hidden;
-    padding: 12px 30px 15px;
-    margin-top: 10px;
+    padding: 16px 38px 20px;
+    margin-top: 13px;
     border-top: 1px solid rgba(23, 61, 50, 0.28);
 }
 
@@ -565,22 +565,22 @@ button {
 }
 
 .card h3 {
-    margin-bottom: 5px;
+    margin-bottom: 7px;
     color: var(--pine);
     font-family: var(--display);
-    font-size: 25px;
+    font-size: 29px;
     font-weight: 700;
     line-height: 1.25;
 }
 
 .card p {
     color: #3b4e43;
-    font-size: 13px;
-    line-height: 1.55;
+    font-size: 14px;
+    line-height: 1.65;
 }
 
 .card .price {
-    margin-top: 9px;
+    margin-top: 12px;
     padding-top: 0;
     color: var(--berry);
     font-size: 16px;
@@ -882,9 +882,9 @@ button {
     }
 
     .card img {
-        width: calc(100% - 68px);
-        height: clamp(180px, 52vw, 225px);
-        margin: 34px 34px 0;
+        width: calc(100% - 76px);
+        height: clamp(200px, 58vw, 270px);
+        margin: 36px 38px 0;
     }
 
     .card-body {
@@ -892,7 +892,7 @@ button {
     }
 
     .card h3 {
-        font-size: 25px;
+        font-size: 28px;
     }
 
     .badge {
@@ -932,9 +932,9 @@ button {
     }
 
     .card img {
-        width: calc(100% - 56px);
-        margin-right: 28px;
-        margin-left: 28px;
+        width: calc(100% - 64px);
+        margin-right: 32px;
+        margin-left: 32px;
     }
 
     .card-body {
